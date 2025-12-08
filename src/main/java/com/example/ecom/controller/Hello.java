@@ -1,7 +1,6 @@
-package com.example.ecom.Controller;
+package com.example.ecom.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

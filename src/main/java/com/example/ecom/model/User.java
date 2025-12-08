@@ -6,7 +6,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-import javax.management.relation.Role;
+
 
 @Entity
 @Data
