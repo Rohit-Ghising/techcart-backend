@@ -1,5 +1,6 @@
 package com.example.ecom.controller;
 
+import com.example.ecom.dto.AuthResponse;
 import com.example.ecom.dto.LoginRequest;
 import com.example.ecom.dto.RegisterRequest;
 import com.example.ecom.model.User;
@@ -19,13 +20,13 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public User register(@RequestBody RegisterRequest registerRequest){
+    public AuthResponse register(@RequestBody RegisterRequest registerRequest){
         return   userService.register(registerRequest);
     }
 
     @PostMapping("/login")
 
-    public  User login (@RequestBody LoginRequest request){
+    public  AuthResponse login (@RequestBody LoginRequest request){
         return  userService.login(request);
     }
 }
