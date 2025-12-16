@@ -7,7 +7,10 @@ import com.example.ecom.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -19,7 +22,13 @@ public class ProductController {
 
     @PostMapping("/add")
     public ResponseEntity<Product>addProduct(@RequestBody ProductCreateDto productDto){
-        Product savedProduct = productService.addProducts();
+        List<MultipartFile> images = new ArrayList<>();
+        Product savedProduct = null;
+        try {
+            savedProduct = productService.addProducts(productDto,images);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         return ResponseEntity.ok(savedProduct);
     }

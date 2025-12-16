@@ -48,6 +48,13 @@ public class Product {
 
     @Column(nullable = false)
     private Boolean active = true;
+    @Column(nullable = false)
+    private Double averageRating = 0.0; // Average of all ratings
+
+    @Column(nullable = false)
+    private Integer numberOfRatings = 0; // Count of ratings
+
+
 
     @Column(updatable = false)
     private LocalDateTime createdAt;
